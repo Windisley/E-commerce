@@ -1,16 +1,40 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { IoMenuSharp } from "react-icons/io5";
+import { useState, useRef } from "react";
+
 
 
 const Header = ()=>{
+    const [showmenu, setShowmenu] = useState(false)
+    const $ul = useRef()
+    function handlemenu(){
+        setShowmenu((show)=>{
+
+            const DomUl = $ul.current
+            console.log(DomUl)
+    
+            if(!showmenu){
+              DomUl.classList.add("translate-x-0", "flex", "opacity-100")
+              DomUl.classList.remove("translate-x-full", "hidden", "opacity-0")    
+    
+            }else{
+                DomUl.classList.add("translate-x-full", "hidden", "opacity-0")
+                DomUl.classList.remove("translate-x-0", "flex")    
+            }
+              
+            return !show
+        })
+    }
     return(
        <header className="max-w-full min-h-full p-4 flex justify-between 
         bg-colorWhite border-border1 border-colorBlack items-center gap-4
+        overflow-hidden
        ">
             <div>
                 <strong className="
-                uppercase
+                uppercase  moba:hidden tablet:block
                 ">
                     e-commerce
                 </strong>
@@ -24,7 +48,7 @@ const Header = ()=>{
                 "/>
 
                 <div className="
-                 absolute left-2 top-1/2  translate-y-centralizeone z-10 
+                 absolute right-2 top-1/2  translate-y-centralizeone z-10 
                  cursor-pointer
                 ">
                     <FaSearch className="
@@ -33,10 +57,15 @@ const Header = ()=>{
                 </div>
                
             </div>
-             <nav className="">
+             <nav className="flex gap-4 items-center justify-center">
+                
                 <ul className="
-                flex gap-4 items-center justify-center
-                ">
+                 min-h-dvh absolute right-0 top-0 bg-colorWhite
+                 max-w-full p-4 hidden flex-col justify-center 
+                 items-center gap-4 translate-x-full ease-in-out duration-500
+                 z-20
+                 
+                " ref={$ul}>
                     <li className="
                     flex items-center justify-center
                     ">
@@ -52,18 +81,27 @@ const Header = ()=>{
                         </button>
                     </li>
                     <li className="
-                    flex
+                    flex items-center justify-center
                     ">
                         <button>
                              <Link to={"Carrinho"}>
                                <FaShoppingCart className="
-                               text-lg text-button hover:text-colorBlack ease-in-out duration-300
+                               text-lg text-button hover:text-colorBlack 
+                               ease-in-out duration-300
                                "/>
                 
                              </Link>
                         </button>
                     </li>
                 </ul>
+
+                <div className="
+                relative z-30
+                " onClick={handlemenu}>
+                    <IoMenuSharp className="
+                    text-xl cursor-pointer
+                    "/>
+                </div>
              </nav>
        </header>
     )

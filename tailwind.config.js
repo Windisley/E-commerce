@@ -23,6 +23,16 @@ export default {
         300: "300px"
       }
 
+    }, screens: {
+      'tablet': '700px',
+      
+      "moba": "300px",
+
+      'laptop': '1024px',
+     
+
+      'desktop': '1900px',
+  
     },
   },
   plugins: [],
