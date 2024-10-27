@@ -9,11 +9,12 @@ import { useState, useRef } from "react";
 const Header = ()=>{
     const [showmenu, setShowmenu] = useState(false)
     const $ul = useRef()
+
     function handlemenu(){
         setShowmenu((show)=>{
 
             const DomUl = $ul.current
-            console.log(DomUl)
+
     
             if(!showmenu){
               DomUl.classList.add("translate-x-0", "flex", "opacity-100")

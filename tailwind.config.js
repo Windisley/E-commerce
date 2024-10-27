@@ -34,6 +34,13 @@ export default {
       'desktop': '1900px',
   
     },
+    letterSpacing:{
+      "padrao": "1px"
+    },
+    gridTemplateColumns:{
+      "gridpadrao": "repeat(3, minmax(0, 300px));",
+       "grid2": "repeat(2, minmax(0, 300px));"
+    }
   },
   plugins: [],
 }
