@@ -1,8 +1,10 @@
-
+import { useContext } from "react";
+import { ProductsContext } from "../Context/Products";
 import { FaCartPlus } from "react-icons/fa";
 
-
 const SectionProduct = () => {
+    const {productinfo, setProductInfo} = useContext(ProductsContext)
+    console.log(productinfo)
     return (
         <div className="
         max-w-full min-h-screen p-4 relative 
