@@ -1,7 +1,8 @@
 import { FaShoppingCart } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoMenuSharp } from "react-icons/io5";
+import { RiMenu3Fill } from "react-icons/ri";
+
 import { useState, useRef } from "react";
 
 
@@ -36,7 +37,7 @@ const Header = ()=>{
             <div>
                 <Link to={"/"}>
                 <strong className="
-                uppercase  moba:hidden tablet:block
+                uppercase
                 ">
                     e-commerce
                 </strong> 
@@ -82,11 +83,19 @@ const Header = ()=>{
                 </ul>
 
                 <div className="
-                relative z-30
+                relative z-30  ease-in-out duration-300
                 " onClick={handlemenu}>
-                    <IoMenuSharp className="
-                    text-xl cursor-pointer
+
+                    {showmenu ? 
+                    <RiMenu3Fill className="
+                    text-xl cursor-pointer ease-in-out duration-300
                     "/>
+                    
+                    :
+                    <IoMenuSharp className="
+                    text-xl cursor-pointer ease-in-out duration-300
+                    "/>
+                    }
                 </div>
              </nav>
        </header>

@@ -34,7 +34,9 @@ function removeItem(itemname){
                         <strong className="capitalize text-base">{item.name}</strong>
                     </div>
 
-                    <div className="flex gap-6 items-center justify-center">
+                    <div className="flex gap-6 items-center justify-center moba:flex-col screen400:flex-row 
+                    screen400:gap-2
+                    ">
                         <p className="capitalize text-base">{item.preco}</p>
                         <div
                             className="cursor-pointer"

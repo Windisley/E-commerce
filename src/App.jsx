@@ -8,6 +8,7 @@ import { ProductsContext } from './Context/Products'
 import Header from './Components/Header'
 import SectionProduct from './Components/SectionProduct';
 import BuyCar from './Components/BuyCar';
+import AboutUs from './Components/AboutUs';
 //Components
 import './App.css'
 
@@ -77,7 +78,7 @@ function App() {
           <Routes>
              <Route path='/' element={<SectionProduct/>}/>
              <Route path='/carrinho' element={<BuyCar/>}/>
-             <Route path="/sobre-nos" />
+             <Route path="/sobre-nos" element={<AboutUs/>}/>
              
           </Routes>
           </ProductsContext.Provider>

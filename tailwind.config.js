@@ -27,6 +27,8 @@ export default {
       
       "moba": "300px",
 
+      "screen400": "400px",
+
       "screen620": "620px",
 
       'tablet': '700px',
