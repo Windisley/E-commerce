@@ -3,32 +3,52 @@ import { Link } from "react-router-dom";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 
-import { useState, useRef } from "react";
-
+import { useState, useRef, useEffect } from "react";
 
 
 const Header = ()=>{
     const [showmenu, setShowmenu] = useState(false)
     const $ul = useRef()
-
+    
+    
+    
     function handlemenu(){
         setShowmenu((show)=>{
 
             const DomUl = $ul.current
-
-    
+            
+            
             if(!showmenu){
-              DomUl.classList.add("translate-x-0", "flex", "opacity-100")
-              DomUl.classList.remove("translate-x-full", "hidden", "opacity-0")    
-    
+                DomUl.classList.add("translate-x-0", "flex", "opacity-100")
+                DomUl.classList.remove("translate-x-full", "hidden", "opacity-0")    
+                
             }else{
                 DomUl.classList.add("translate-x-full", "hidden", "opacity-0")
                 DomUl.classList.remove("translate-x-0", "flex")    
             }
-              
+            
             return !show
         })
     }
+    useEffect(() => {
+        
+        function handleClickOutside(event) {
+            const DomUl = $ul.current
+            if ($ul.current && !($ul.current.contains(event.target))) {
+                setShowmenu(false)
+                DomUl.classList.add("translate-x-full", "hidden", "opacity-0")
+                DomUl.classList.remove("translate-x-0", "flex")    
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside)
+    
+       
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        };
+    
+    }, [])
+    
     return(
        <header className="max-w-full min-h-full p-4 flex justify-between 
         bg-colorWhite border-border1 border-colorBlack items-center gap-4
