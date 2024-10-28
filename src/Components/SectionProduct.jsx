@@ -11,6 +11,14 @@ const SectionProduct = () => {
     
     const { productinfo, setProductInfo } = useContext(ProductsContext)
     
+    function Selectedcar(selectedItem) {
+        const updatedProducts = productinfo.map((item) => 
+            item.name === selectedItem.name ? { ...item, selectedcar: true } : item
+        );
+        setProductInfo(updatedProducts);
+        alert("Produto Esta no Carrinho!")
+    }
+    
     return (
         <div className="
         max-w-full min-h-screen p-4 relative 
@@ -61,13 +69,13 @@ const SectionProduct = () => {
                                 {item.name}
                             </p>
 
-                            <Link to={"/carrinho"}>
-                            <div onClick={()=>{item.selectcar = true}}>
+                       
+                            <div onClick={()=>Selectedcar(item)}>
                                 <FaCartPlus className="
                     text-lg hover:text-button cursor-pointer ease-in-out
                     "/>
                             </div>
-                            </Link>
+                          
 
                         </div>
                         <div className="

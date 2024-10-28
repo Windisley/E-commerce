@@ -42,24 +42,7 @@ const Header = ()=>{
                 </strong> 
                 </Link>
             </div>
-            <div className="
-              relative w-full max-w-300
-            ">
-                <input type="text" placeholder="O que você esta procurando?" className="
-                 w-full border-border1 border-colorBlack px-4 py-1 rounded-lg 
-                 placeholder:text-center px-8
-                "/>
-
-                <div className="
-                 absolute right-2 top-1/2  translate-y-centralizeone z-10 
-                 cursor-pointer
-                ">
-                    <FaSearch className="
-                    text-lg hover:text-primarygray ease-in-out duration-300
-                    "/>
-                </div>
-               
-            </div>
+            
              <nav className="flex gap-4 items-center justify-center">
                 
                 <ul className="
