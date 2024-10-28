@@ -7,6 +7,7 @@ import { ProductsContext } from './Context/Products'
 // Components
 import Header from './Components/Header'
 import SectionProduct from './Components/SectionProduct';
+import BuyCar from './Components/BuyCar';
 //Components
 import './App.css'
 
@@ -26,32 +27,38 @@ function App() {
       {
         img: pagani,
         name: "Pagani",
-        preco: "R$120,00"
+        preco: "R$120,00",
+        selectcar: false
       },
       {
         img: rolexdate,
         name: "Rolex Datejust",
-        preco: "R$220,00"
+        preco: "R$220,00",
+        selectcar: false
       },
       {
         img: submarinergold,
         name: "Submariner Gold",
-        preco: "R$520,00"
+        preco: "R$520,00",
+        selectcar: false
       },
       {
         img: submariner,
         name: "Submariner",
-        preco: "R$220,00"
+        preco: "R$220,00",
+        selectcar: false
       },
       {
         img: rolex,
         name: "Rolex",
         preco: "R$80,00"
+,        selectcar: false
       },
       {
         img: rolexred,
         name: "Rolex Redmop",
-        preco: "R$320,00"
+        preco: "R$320,00",
+        selectcar: false
       },
 
     ])
@@ -66,8 +73,13 @@ function App() {
        <Router>
           <Header/>
           <ProductsContext.Provider value={{productinfo, setProductInfo}}>
-          <SectionProduct/>
-
+          {/* <SectionProduct/> */}
+          
+          <Routes>
+             <Route path='/' element={<SectionProduct/>}/>
+             <Route path='/carrinho' element={<BuyCar/>}/>
+             
+          </Routes>
           </ProductsContext.Provider>
        </Router>
    

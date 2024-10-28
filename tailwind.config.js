@@ -24,9 +24,14 @@ export default {
       }
 
     }, screens: {
-      'tablet': '700px',
       
       "moba": "300px",
+
+      "screen620": "620px",
+
+      'tablet': '700px',
+
+      "screen900": "920px",
 
       'laptop': '1024px',
      

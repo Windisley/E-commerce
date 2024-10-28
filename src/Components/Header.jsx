@@ -34,11 +34,13 @@ const Header = ()=>{
         overflow-hidden
        ">
             <div>
+                <Link to={"/"}>
                 <strong className="
                 uppercase  moba:hidden tablet:block
                 ">
                     e-commerce
-                </strong>
+                </strong> 
+                </Link>
             </div>
             <div className="
               relative w-full max-w-300
