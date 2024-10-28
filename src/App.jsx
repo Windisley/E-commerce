@@ -73,7 +73,6 @@ function App() {
        <Router>
           <Header/>
           <ProductsContext.Provider value={{productinfo, setProductInfo}}>
-          {/* <SectionProduct/> */}
           
           <Routes>
              <Route path='/' element={<SectionProduct/>}/>

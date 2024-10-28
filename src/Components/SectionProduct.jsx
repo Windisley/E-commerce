@@ -47,7 +47,7 @@ const SectionProduct = () => {
                 max-w-full h-4/5  bg-primarygray rounded-lg p-2 flex items-center
                 justify-center
                 ">
-                            <img src={item.img} alt="Relogio de Luxo" className="
+                            <img src={item.img} alt={item.name} className="
                      w-4/5 min-h-80 object-center object-contain moba:max-w-60 moba:min-h-60 
                      screen620:w-4/5 screen620:min-h-80  
                     " loading="lazy"/>
@@ -62,7 +62,7 @@ const SectionProduct = () => {
                             </p>
 
                             <Link to={"/carrinho"}>
-                            <div>
+                            <div onClick={()=>{item.selectcar = true}}>
                                 <FaCartPlus className="
                     text-lg hover:text-button cursor-pointer ease-in-out
                     "/>
